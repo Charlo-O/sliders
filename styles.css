@@ -1,0 +1,76 @@
+:root {
+  --bg: #101010;
+  --label: #666;
+  --track-width: 320px;
+  --track-height: 28px;
+  /* Must match MARGIN in sliders.js: room for the rubber-band stretch. */
+  --stretch-room: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+html.is-dragging,
+html.is-dragging * {
+  cursor: grabbing !important;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: var(--track-width);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.slider {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  cursor: grab;
+  outline: none;
+  touch-action: none;
+}
+
+/* Generous hit area so the slider can be grabbed slightly above or below the track. */
+.slider::before {
+  content: "";
+  position: absolute;
+  inset: -12px calc(-1 * var(--stretch-room)) -22px;
+}
+
+.slider-label {
+  font-size: 14px;
+  line-height: 1;
+  color: var(--label);
+  transition: color 0.15s ease;
+}
+
+.slider:focus-visible .slider-label {
+  color: #b3b3b3;
+}
+
+.slider-track {
+  display: block;
+  width: calc(var(--track-width) + 2 * var(--stretch-room));
+  height: var(--track-height);
+  margin: 0 calc(-1 * var(--stretch-room));
+  image-rendering: pixelated;
+}

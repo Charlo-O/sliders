@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sliders</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="panel">
+    <div class="slider" role="slider" tabindex="0" aria-label="Volume" aria-valuemin="0" aria-valuemax="100" data-pattern="lines" data-value="0">
+      <span class="slider-label">Volume</span>
+      <canvas class="slider-track" aria-hidden="true"></canvas>
+    </div>
+    <div class="slider" role="slider" tabindex="0" aria-label="Brightness" aria-valuemin="0" aria-valuemax="100" data-pattern="dither" data-value="1">
+      <span class="slider-label">Brightness</span>
+      <canvas class="slider-track" aria-hidden="true"></canvas>
+    </div>
+    <div class="slider" role="slider" tabindex="0" aria-label="Contrast" aria-valuemin="0" aria-valuemax="100" data-pattern="halftone" data-value="4">
+      <span class="slider-label">Contrast</span>
+      <canvas class="slider-track" aria-hidden="true"></canvas>
+    </div>
+    <div class="slider" role="slider" tabindex="0" aria-label="Sharpness" aria-valuemin="0" aria-valuemax="100" data-pattern="hatch" data-value="3">
+      <span class="slider-label">Sharpness</span>
+      <canvas class="slider-track" aria-hidden="true"></canvas>
+    </div>
+  </main>
+  <script src="sliders.js"></script>
+</body>
+</html>
